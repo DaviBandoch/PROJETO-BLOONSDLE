@@ -3,11 +3,11 @@ let currentAttempts = maxAttempts;
 
 // Blurring levels (filter values)
 const blurLevels = [
-    'blur(10px)',  // Initial
-    'blur(7px)',
+    'blur(20px)',  // Initial
+    'blur(15px)',
+    'blur(10px)',
     'blur(5px)',
     'blur(3px)',
-    'blur(1px)',
     'blur(0px)'   // Clear
 ];
 

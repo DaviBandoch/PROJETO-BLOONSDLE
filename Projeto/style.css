@@ -26,12 +26,14 @@ h1 {
 .image-container {
     position: relative;
     margin-bottom: 20px;
+    filter: blur(0px) grayscale(1);
+
 }
 
 #character-image {
     width: 100%;
-    filter: blur(10px);
     transition: filter 0.3s ease;
+    filter: blur(20px) grayscale(1);
 }
 
 form {
