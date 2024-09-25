@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Personagens - Bloons TD6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de Personagens - Bloons TD6</h1>
+        <div id="game-container">
+            <div class="image-container">
+                <img id="character-image" src="" alt="Imagem do Dia">
+            </div>
+            <form id="quiz-form">
+                <label for="guess-input">Seu palpite:</label>
+                <input type="text" id="guess-input" placeholder="Digite seu palpite">
+                <div id="suggestions"></div>
+                <button type="button" onclick="submitGuess()">Enviar</button>
+            </form>
+            <p id="result"></p>
+            <p id="attempts">Tentativas restantes: <span id="attempt-count">5</span></p>
+        </div>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>
+

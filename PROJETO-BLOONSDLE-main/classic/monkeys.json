@@ -1,0 +1,322 @@
+[
+    {
+      "name": "Dart Monkey",
+      "class": "Primary",
+      "release_year": 2018,
+      "alcance": 32,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Boomerang Monkey",
+      "class": "Primary",
+      "release_year": 2018,
+      "alcance": 43,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Bomb Shooter",
+      "class": "Primary",
+      "release_year": 2018,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Explosion"
+    },
+    {
+      "name": "Tack Shooter",
+      "class": "Primary",
+      "release_year": 2018,
+      "alcance": 23,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Ice Monkey",
+      "class": "Primary",
+      "release_year": 2018,
+      "alcance": 20,
+      "terrain": "Ground",
+      "damage_type": "Cold"
+    },
+    {
+      "name": "Glue Gunner",
+      "class": "Primary",
+      "release_year": 2018,
+      "alcance": 46,
+      "terrain": "Ground",
+      "damage_type": "Acid"
+    },
+    {
+      "name": "Sniper Monkey",
+      "class": "Military",
+      "release_year": 2018,
+      "alcance": "Infinite / 20dr",
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Monkey Sub",
+      "class": "Military",
+      "release_year": 2018,
+      "alcance": 42,
+      "terrain": "Water",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Monkey Bucaneer",
+      "class": "Military",
+      "release_year": 2018,
+      "alcance": 60,
+      "terrain": "Water",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Monkey Ace",
+      "class": "Military",
+      "release_year": 2018,
+      "alcance": "40-80 / 22dr",
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Heli Pilot",
+      "class": "Military",
+      "release_year": 2018,
+      "alcance": "42 / 22dr",
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Mortar Monkey",
+      "class": "Military",
+      "release_year": 2018,
+      "alcance": "Infinite / 30dr",
+      "terrain": "Ground",
+      "damage_type": "Explosion"
+    },
+    {
+      "name": "Dartling Gunner",
+      "class": "Military",
+      "release_year": 2020,
+      "alcance": "Infinite / 20dr",
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Wizard Monkey",
+      "class": "Magic",
+      "release_year": 2018,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Energy"
+    },
+    {
+      "name": "Super Monkey",
+      "class": "Magic",
+      "release_year": 2018,
+      "alcance": 50,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Ninja Monkey",
+      "class": "Magic",
+      "release_year": 2018,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Alchemist",
+      "class": "Magic",
+      "release_year": 2018,
+      "alcance": 45,
+      "terrain": "Ground",
+      "damage_type": "Acid"
+    },
+    {
+      "name": "Druid",
+      "class": "Magic",
+      "release_year": 2018,
+      "alcance": 35,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Mermonkey",
+      "class": "Magic",
+      "release_year": 2024,
+      "alcance": "28/35",
+      "terrain": "Ground/Water",
+      "damage_type": "Normal/Shatter"
+    },
+    {
+      "name": "Banana Farm",
+      "class": "Support",
+      "release_year": 2018,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Passive"
+    },
+    {
+      "name": "Spike Factory",
+      "class": "Support",
+      "release_year": 2018,
+      "alcance": 34,
+      "terrain": "Ground",
+      "damage_type": "Passive"
+    },
+    {
+      "name": "Monkey Village",
+      "class": "Support",
+      "release_year": 2018,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Passive"
+    },
+    {
+      "name": "Engineer Monkey",
+      "class": "Support",
+      "release_year": 2019,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Beast Handler",
+      "class": "Support",
+      "release_year": 2023,
+      "alcance": "20/60",
+      "terrain": "Ground",
+      "damage_type": "Energy"
+    },
+    {
+      "name": "Quincy",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 50,
+      "terrain": "Ground",
+      "damage_type": "Sharp / Explosion"
+    },
+    {
+      "name": "Gwendolin",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 38,
+      "terrain": "Ground",
+      "damage_type": "Fire-based"
+    },
+    {
+      "name": "Striker Jones",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 55,
+      "terrain": "Ground",
+      "damage_type": "Explosion"
+    },
+    {
+      "name": "Obyn Greenfoot",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 43,
+      "terrain": "Ground",
+      "damage_type": "Nature-Based"
+    },
+    {
+      "name": "Captain Churchill",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 63,
+      "terrain": "Ground",
+      "damage_type": "Explosion"
+    },
+    {
+      "name": "Benjamin",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 20,
+      "terrain": "Ground",
+      "damage_type": "Passive"
+    },
+    {
+      "name": "Ezili",
+      "class": "Hero",
+      "release_year": 2018,
+      "alcance": 43,
+      "terrain": "Ground",
+      "damage_type": "Dark Voodoo Magic"
+    },
+    {
+      "name": "Pat Fusty",
+      "class": "Hero",
+      "release_year": 2019,
+      "alcance": 24,
+      "terrain": "Ground",
+      "damage_type": "Slam attacks"
+    },
+    {
+      "name": "Adora",
+      "class": "Hero",
+      "release_year": 2019,
+      "alcance": 45,
+      "terrain": "Ground",
+      "damage_type": "Sunbeams"
+    },
+    {
+      "name": "Admiral Brickell",
+      "class": "Hero",
+      "release_year": 2020,
+      "alcance": 50,
+      "terrain": "Water",
+      "damage_type": "Sharp / Explosion"
+    },
+    {
+      "name": "Etienne",
+      "class": "Hero",
+      "release_year": 2020,
+      "alcance": 55,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Sauda",
+      "class": "Hero",
+      "release_year": 2021,
+      "alcance": 23,
+      "terrain": "Ground",
+      "damage_type": "Sharp"
+    },
+    {
+      "name": "Psi",
+      "class": "Hero",
+      "release_year": 2021,
+      "alcance": "Infinite",
+      "terrain": "Ground",
+      "damage_type": "Psychic vibrations"
+    },
+    {
+      "name": "Geraldo",
+      "class": "Hero",
+      "release_year": 2022,
+      "alcance": 40,
+      "terrain": "Ground",
+      "damage_type": "Lightning attacks"
+    },
+    {
+      "name": "Corvus",
+      "class": "Hero",
+      "release_year": 2023,
+      "alcance": "50/20",
+      "terrain": "Ground",
+      "damage_type": "Bloon Haunting"
+    },
+    {
+      "name": "Rosalia",
+      "class": "Hero",
+      "release_year": 2024,
+      "alcance": "60/32",
+      "terrain": "Ground",
+      "damage_type": "Lasers"
+    }
+  ]
