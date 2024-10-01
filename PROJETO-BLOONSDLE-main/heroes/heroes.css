@@ -7,6 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: url('/home/images/background.png') center center no-repeat fixed;
+    background-size: 100%;
 }
 
 .container {
@@ -78,3 +80,26 @@ button:focus {
     margin-top: 20px;
     font-weight: bold;
 }
+
+
+button.home-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease; /* Transição suave */
+    background-image: url('/path/to/your/arrow.png'); /* Caminho para a imagem */
+    background-repeat: no-repeat;
+    background-position: 10px center; /* Ajuste conforme necessário */
+    padding-left: 40px; /* Espaço para a imagem */
+}
+
+button.home-button:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+}
+

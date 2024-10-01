@@ -6,6 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: url('/home/images/background.png') center center no-repeat fixed;
+    background-size: 100%;
 }
 
 header {

@@ -68,6 +68,7 @@ function submitGuess() {
         if (currentAttempts > 0) {
             currentAttempts--;
             attemptCountElement.textContent = currentAttempts;
+            imageElement.style.filter = 'grayscale (0)'
         }
 
         if (currentAttempts <= 0) {

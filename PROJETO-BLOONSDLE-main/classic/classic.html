@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bloondle</title>
+    <title>Bloondle</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Bloondle</h1>
+        <h1>Bloondle - Classic</h1>
     </header>
     <main>
-        <form id="guessForm">
-            <label for="characterGuess">Adivinhe o personagem:</label>
-            <input type="text" id="characterGuess" name="characterGuess" required>
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="feedback"></div>
+        <label for="search">Digite seu texto:</label>
+        <input type="text" id="search" placeholder="Pesquise...">
+        <div id="result"></div> <!-- Resultados aparecerão aqui -->
     </main>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('search').addEventListener('input', async function() {
+            const query = this.value;
+            const data = await loadData();
+            const filteredData = filterData(data, query);
+            
+            if (query) {
+                document.getElementById('result').innerHTML = filteredData.map(item => item.name).join(', ') || 'Nenhum resultado encontrado.';
+            } else {
+                document.getElementById('result').innerHTML = ''; // Limpa os resultados se o campo estiver vazio
+            }
+        });
+    </script>
 </body>
 </html>
