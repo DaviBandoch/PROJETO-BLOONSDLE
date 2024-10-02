@@ -1,5 +1,6 @@
 let maxAttempts = 5;
 let currentAttempts = maxAttempts;
+let guesses = []; // Array para armazenar palpite
 
 const blurLevels = [
     'blur(35px)', 
@@ -50,41 +51,65 @@ function submitGuess() {
     const imageElement = document.getElementById('character-image');
     const suggestionsContainer = document.getElementById('suggestions');
 
+    // Verifica se o elemento da imagem existe
     if (!imageElement) {
         console.error('Elemento com ID "character-image" não encontrado.');
         return;
     }
 
+    // Verifica se o palpite já foi feito
+    if (guesses.includes(input.toLowerCase())) {
+    resultElement.textContent = 'Você já tentou esse palpite. Tente outro!';
+    return;
+}
+
+     // Adiciona o palpite ao array
+     guesses.push(input.toLowerCase());
+
+
+    // Verifica se o input está vazio
     if (input === '') {
         resultElement.textContent = 'Por favor, digite um palpite.';
         return;
     }
 
+    // Verifica o palpite do usuário
     if (input.toLowerCase() === correctAnswer.toLowerCase()) {
+        // Acerto - exibe mensagem, mas não revela a imagem
         resultElement.textContent = 'Parabéns! Você acertou!';
-        imageElement.style.filter = 'blur(0) grayscale(0)'; // Revela a imagem
-        suggestionsContainer.innerHTML = ''; // Limpa sugestões
+        suggestionsContainer.innerHTML = ''; // Limpa as sugestões
+        document.getElementById('guess-input').value = ''; // Limpa o input
+        imageElement.style.filter = 'blur(0) grayscale(0)';
+
     } else {
+        // Se o palpite estiver errado e ainda há tentativas
         if (currentAttempts > 0) {
             currentAttempts--;
             attemptCountElement.textContent = currentAttempts;
-            imageElement.style.filter = 'grayscale (0)'
-        }
 
-        if (currentAttempts <= 0) {
-            resultElement.textContent = `Você perdeu! A resposta era "${correctAnswer}".`;
-            imageElement.style.filter = 'blur(0) grayscale(0)'; // Mostra a imagem sem desfoque
-        } else {
-            resultElement.textContent = 'Resposta errada. Tente novamente!';
+            // Desfoca a imagem com base nas tentativas restantes
             const blurIndex = maxAttempts - currentAttempts;
-            imageElement.style.filter = blurLevels[blurIndex];
+            imageElement.style.filter = blurLevels[blurIndex] + 'grayscale(100%)';
+
+            if (currentAttempts <= 0) {
+                resultElement.textContent = `Você perdeu! A resposta era "${correctAnswer}".`;
+                // Revela a imagem apenas se todas as tentativas forem usadas
+                imageElement.style.filter = 'blur(0) grayscale(0)';
+            } else {
+                resultElement.textContent = 'Resposta errada. Tente novamente!';
+            }
         }
     }
 
+    // Limpa o campo de input após cada palpite
+    document.getElementById('guess-input').value = '';
 }
 
-function filterCharacters(letter) {
-    return Object.values(characters).filter(character => character.startsWith(letter));
+
+function filterCharacters(input) {
+    return Object.values(characters).filter(character => 
+        character.toUpperCase().includes(input.toUpperCase())
+    );
 }
 
 function displaySuggestions(suggestions) {
@@ -104,12 +129,10 @@ function displaySuggestions(suggestions) {
     });
 }
 
-document.addEventListener('keydown', function(event) {
-    const letter = event.key;
-    if (letter && letter.length === 1 && letter.match(/[A-Za-z]/)) {
-        const suggestions = filterCharacters(letter.toUpperCase());
-        displaySuggestions(suggestions);
-    }
+document.getElementById('guess-input').addEventListener('input', function() {
+    const input = this.value; // Obtém o valor do input
+    const suggestions = filterCharacters(input); // Filtra os personagens
+    displaySuggestions(suggestions); // Exibe as sugestões
 });
 
 document.addEventListener('DOMContentLoaded', function () {

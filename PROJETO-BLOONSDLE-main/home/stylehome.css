@@ -3,6 +3,15 @@
     font-weight: 400;
     font-style: normal;
   }
+
+.fredoka{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
   
   body {
     background: url('./images/background.png') center center no-repeat fixed;
@@ -34,6 +43,7 @@
 }
 
 .button-container{
+  font-family: "Fredoka", sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -68,4 +78,16 @@
   font-weight: 200;
   color: white;
   text-align: left;
+}
+
+.aboutus{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.about-title{
+  font-family: "Fredoka", sans-serif;
+  position: absolute;
+  font-size: larger ;
 }

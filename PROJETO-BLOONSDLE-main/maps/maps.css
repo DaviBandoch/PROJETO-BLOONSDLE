@@ -8,7 +8,7 @@ body {
     align-items: center;
     height: 100vh;
     background: url('/home/images/background.png') center center no-repeat fixed;
-    background-size: cover; /* Altera para cover para melhor ajuste */
+    background-size: 100%;
 }
 
 .container {
@@ -16,13 +16,13 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 90%;
-    max-width: 400px;
+    width: 90%; /* Ajuste para responsividade */
+    max-width: 400px; /* Limite a largura máxima */
     text-align: center;
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Uso de em para responsividade */
     margin-bottom: 20px;
 }
 
@@ -33,8 +33,8 @@ h1 {
 
 #character-image {
     width: 100%;
-    transition: filter 0.5s ease; /* Suaviza a transição */
-    filter: blur(35px) grayscale(100%);
+    transition: filter 0.3s ease;
+    filter: blur(35px) grayscale(100%); /* Inicialmente com desfoque e escala de cinza */
 }
 
 .hidden {
@@ -55,12 +55,6 @@ input[type="text"] {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    transition: border-color 0.3s ease; /* Suave ao focar */
-}
-
-input[type="text"]:focus {
-    border-color: #007BFF; /* Destaque ao focar */
-    outline: none; /* Remove contorno padrão */
 }
 
 button {
@@ -70,7 +64,7 @@ button {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s; 
+    transition: background-color 0.3s ease, transform 0.2s; /* Transição suave */
 }
 
 button:hover {
@@ -78,39 +72,34 @@ button:hover {
 }
 
 button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-button:active {
-    transform: scale(0.95); /* Efeito ao clicar */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adiciona um efeito de foco */
 }
 
 #result, #attempts {
     margin-top: 20px;
     font-weight: bold;
-    background-color: #e7f3fe; /* Fundo leve para resultados */
-    padding: 10px;
-    border-radius: 5px;
 }
+
 
 button.home-button {
     position: absolute;
     top: 10px;
     left: 10px;
     padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    background-image: url('/path/to/your/arrow.png');
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: background-color 0.3s ease; /* Transição suave */
+    background-image: url('/path/to/your/arrow.png'); /* Caminho para a imagem */
     background-repeat: no-repeat;
-    background-position: 10px center;
-    padding-left: 40px;
+    background-position: 10px center; /* Ajuste conforme necessário */
+    padding-left: 40px; /* Espaço para a imagem */
 }
 
 button.home-button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
 }
+
