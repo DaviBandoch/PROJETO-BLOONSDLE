@@ -64,3 +64,11 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+.names{
+    color: white;
+}
+
+.result-item{
+    background-color: magenta;
+}

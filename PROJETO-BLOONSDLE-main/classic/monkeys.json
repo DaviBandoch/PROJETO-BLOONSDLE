@@ -1,13 +1,16 @@
 [
-    {
+    { 
+      "image": "/images/macaco.png",
       "name": "Dart Monkey",
       "class": "Primary",
       "release_year": 2018,
       "alcance": 32,
       "terrain": "Ground",
       "damage_type": "Sharp"
+      
     },
     {
+      "image": "macaco.png",
       "name": "Boomerang Monkey",
       "class": "Primary",
       "release_year": 2018,
@@ -16,6 +19,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Bomb Shooter",
       "class": "Primary",
       "release_year": 2018,
@@ -24,6 +28,7 @@
       "damage_type": "Explosion"
     },
     {
+      "image": "macaco.png",
       "name": "Tack Shooter",
       "class": "Primary",
       "release_year": 2018,
@@ -32,6 +37,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Ice Monkey",
       "class": "Primary",
       "release_year": 2018,
@@ -40,6 +46,7 @@
       "damage_type": "Cold"
     },
     {
+      "image": "macaco.png",
       "name": "Glue Gunner",
       "class": "Primary",
       "release_year": 2018,
@@ -48,6 +55,7 @@
       "damage_type": "Acid"
     },
     {
+      "image": "macaco.png",
       "name": "Sniper Monkey",
       "class": "Military",
       "release_year": 2018,
@@ -56,6 +64,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Monkey Sub",
       "class": "Military",
       "release_year": 2018,
@@ -64,6 +73,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Monkey Bucaneer",
       "class": "Military",
       "release_year": 2018,
@@ -72,6 +82,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Monkey Ace",
       "class": "Military",
       "release_year": 2018,
@@ -80,6 +91,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Heli Pilot",
       "class": "Military",
       "release_year": 2018,
@@ -88,6 +100,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Mortar Monkey",
       "class": "Military",
       "release_year": 2018,
@@ -96,6 +109,7 @@
       "damage_type": "Explosion"
     },
     {
+      "image": "macaco.png",
       "name": "Dartling Gunner",
       "class": "Military",
       "release_year": 2020,
@@ -104,6 +118,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Wizard Monkey",
       "class": "Magic",
       "release_year": 2018,
@@ -112,6 +127,7 @@
       "damage_type": "Energy"
     },
     {
+      "image": "macaco.png",
       "name": "Super Monkey",
       "class": "Magic",
       "release_year": 2018,
@@ -120,6 +136,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Ninja Monkey",
       "class": "Magic",
       "release_year": 2018,
@@ -128,6 +145,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Alchemist",
       "class": "Magic",
       "release_year": 2018,
@@ -136,6 +154,7 @@
       "damage_type": "Acid"
     },
     {
+      "image": "macaco.png",
       "name": "Druid",
       "class": "Magic",
       "release_year": 2018,
@@ -144,6 +163,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Mermonkey",
       "class": "Magic",
       "release_year": 2024,
@@ -152,6 +172,7 @@
       "damage_type": "Normal/Shatter"
     },
     {
+      "image": "macaco.png",
       "name": "Banana Farm",
       "class": "Support",
       "release_year": 2018,
@@ -160,6 +181,7 @@
       "damage_type": "Passive"
     },
     {
+      "image": "macaco.png",
       "name": "Spike Factory",
       "class": "Support",
       "release_year": 2018,
@@ -168,6 +190,7 @@
       "damage_type": "Passive"
     },
     {
+      "image": "macaco.png",
       "name": "Monkey Village",
       "class": "Support",
       "release_year": 2018,
@@ -176,6 +199,7 @@
       "damage_type": "Passive"
     },
     {
+      "image": "macaco.png",
       "name": "Engineer Monkey",
       "class": "Support",
       "release_year": 2019,
@@ -184,6 +208,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Beast Handler",
       "class": "Support",
       "release_year": 2023,
@@ -192,6 +217,7 @@
       "damage_type": "Energy"
     },
     {
+      "image": "macaco.png",
       "name": "Quincy",
       "class": "Hero",
       "release_year": 2018,
@@ -200,6 +226,7 @@
       "damage_type": "Sharp / Explosion"
     },
     {
+      "image": "macaco.png",
       "name": "Gwendolin",
       "class": "Hero",
       "release_year": 2018,
@@ -208,6 +235,7 @@
       "damage_type": "Fire-based"
     },
     {
+      "image": "macaco.png",
       "name": "Striker Jones",
       "class": "Hero",
       "release_year": 2018,
@@ -216,6 +244,7 @@
       "damage_type": "Explosion"
     },
     {
+      "image": "macaco.png",
       "name": "Obyn Greenfoot",
       "class": "Hero",
       "release_year": 2018,
@@ -224,6 +253,7 @@
       "damage_type": "Nature-Based"
     },
     {
+      "image": "macaco.png",
       "name": "Captain Churchill",
       "class": "Hero",
       "release_year": 2018,
@@ -232,6 +262,7 @@
       "damage_type": "Explosion"
     },
     {
+      "image": "macaco.png",
       "name": "Benjamin",
       "class": "Hero",
       "release_year": 2018,
@@ -240,6 +271,7 @@
       "damage_type": "Passive"
     },
     {
+      "image": "macaco.png",
       "name": "Ezili",
       "class": "Hero",
       "release_year": 2018,
@@ -248,6 +280,7 @@
       "damage_type": "Dark Voodoo Magic"
     },
     {
+      "image": "macaco.png",
       "name": "Pat Fusty",
       "class": "Hero",
       "release_year": 2019,
@@ -256,6 +289,7 @@
       "damage_type": "Slam attacks"
     },
     {
+      "image": "macaco.png",
       "name": "Adora",
       "class": "Hero",
       "release_year": 2019,
@@ -264,6 +298,7 @@
       "damage_type": "Sunbeams"
     },
     {
+      "image": "macaco.png",
       "name": "Admiral Brickell",
       "class": "Hero",
       "release_year": 2020,
@@ -272,6 +307,7 @@
       "damage_type": "Sharp / Explosion"
     },
     {
+      "image": "macaco.png",
       "name": "Etienne",
       "class": "Hero",
       "release_year": 2020,
@@ -280,6 +316,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Sauda",
       "class": "Hero",
       "release_year": 2021,
@@ -288,6 +325,7 @@
       "damage_type": "Sharp"
     },
     {
+      "image": "macaco.png",
       "name": "Psi",
       "class": "Hero",
       "release_year": 2021,
@@ -296,6 +334,7 @@
       "damage_type": "Psychic vibrations"
     },
     {
+      "image": "macaco.png",
       "name": "Geraldo",
       "class": "Hero",
       "release_year": 2022,
@@ -304,6 +343,7 @@
       "damage_type": "Lightning attacks"
     },
     {
+      "image": "macaco.png",
       "name": "Corvus",
       "class": "Hero",
       "release_year": 2023,
@@ -312,6 +352,7 @@
       "damage_type": "Bloon Haunting"
     },
     {
+      "image": "macaco.png",
       "name": "Rosalia",
       "class": "Hero",
       "release_year": 2024,

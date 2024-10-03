@@ -16,18 +16,5 @@
         <div id="result"></div> <!-- Resultados aparecerão aqui -->
     </main>
     <script src="script.js"></script>
-    <script>
-        document.getElementById('search').addEventListener('input', async function() {
-            const query = this.value;
-            const data = await loadData();
-            const filteredData = filterData(data, query);
-            
-            if (query) {
-                document.getElementById('result').innerHTML = filteredData.map(item => item.name).join(', ') || 'Nenhum resultado encontrado.';
-            } else {
-                document.getElementById('result').innerHTML = ''; // Limpa os resultados se o campo estiver vazio
-            }
-        });
-    </script>
 </body>
 </html>

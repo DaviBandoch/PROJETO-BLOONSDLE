@@ -1,6 +1,6 @@
 // Função para carregar os dados do JSON
 async function loadData() {
-    const response = await fetch('monkeys.json');
+    const response = await fetch('monkeys.json'); // Certifique-se de que o caminho está correto
     return await response.json();
 }
 
@@ -11,13 +11,29 @@ function filterData(data, query) {
 
 // Função para exibir os resultados
 function displayResults(results) {
-    const resultsContainer = document.getElementById('results');
+    const resultsContainer = document.getElementById('result');
     resultsContainer.innerHTML = '';
     
+    if (results.length === 0) {
+        resultsContainer.innerHTML = 'Nenhum resultado encontrado.';
+        return;
+    }
+
     results.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item.name;
-        resultsContainer.appendChild(li);
+        const resultItem = document.createElement('div');
+        resultItem.className = 'result-item';
+
+        const img = document.createElement('img');
+        img.src = item.image; // URL da imagem
+        img.alt = item.name;
+        img.style.width = '100px';
+        img.style.height = 'auto';
+
+        const name = document.createElement('p');
+        name.textContent = item.name;
+
+        resultItem.appendChild(img);
+        resultsContainer.appendChild(resultItem);
     });
 }
 

@@ -91,3 +91,11 @@
   position: absolute;
   font-size: larger ;
 }
+
+.icons{
+  display: flex;
+  font-size: xx-large;
+  position: absolute;
+  margin: 100px;
+  gap: 50px;
+}
