@@ -4,9 +4,9 @@ let guesses = []; // Array para armazenar palpite
 
 const blurLevels = [
     'blur(35px)', 
+    'blur(25px)',
     'blur(18px)',
-    'blur(13px)',
-    'blur(10px)',
+    'blur(14px)',
     'blur(5px)',
     'blur(0px)',
 ];
@@ -32,6 +32,7 @@ const characters = {
 
 let currentImage = '';
 let correctAnswer = '';
+let initialRotation = Math.random() * 360; // Rotação inicial aleatória
 
 function getImageForToday() {
     const totalImages = Object.keys(characters).length;
@@ -42,6 +43,12 @@ function getImageForToday() {
     currentImage = imageName;
     correctAnswer = characters[imageName];
     return `imgs-heroes/${imageName}`;
+}
+
+function rotateImage() {
+    const imageElement = document.getElementById('character-image');
+    const rotationDegree = (initialRotation + (maxAttempts - currentAttempts) * (360 / maxAttempts)) % 360; // Incrementa a rotação
+    imageElement.style.transform = `rotate(${rotationDegree}deg)`; // Aplica a rotação
 }
 
 function submitGuess() {
@@ -59,13 +66,12 @@ function submitGuess() {
 
     // Verifica se o palpite já foi feito
     if (guesses.includes(input.toLowerCase())) {
-    resultElement.textContent = 'Você já tentou esse palpite. Tente outro!';
-    return;
-}
+        resultElement.textContent = 'Você já tentou esse palpite. Tente outro!';
+        return;
+    }
 
-     // Adiciona o palpite ao array
-     guesses.push(input.toLowerCase());
-
+    // Adiciona o palpite ao array
+    guesses.push(input.toLowerCase());
 
     // Verifica se o input está vazio
     if (input === '') {
@@ -75,12 +81,12 @@ function submitGuess() {
 
     // Verifica o palpite do usuário
     if (input.toLowerCase() === correctAnswer.toLowerCase()) {
-        // Acerto - exibe mensagem, mas não revela a imagem
+        // Acerto - exibe mensagem e revela a imagem
         resultElement.textContent = 'Parabéns! Você acertou!';
         suggestionsContainer.innerHTML = ''; // Limpa as sugestões
         document.getElementById('guess-input').value = ''; // Limpa o input
         imageElement.style.filter = 'blur(0) grayscale(0)';
-
+        imageElement.style.transform = 'rotate(0deg)'; // Volta a imagem para a posição correta
     } else {
         // Se o palpite estiver errado e ainda há tentativas
         if (currentAttempts > 0) {
@@ -89,24 +95,24 @@ function submitGuess() {
 
             // Desfoca a imagem com base nas tentativas restantes
             const blurIndex = maxAttempts - currentAttempts;
-            imageElement.style.filter = blurLevels[blurIndex] + 'grayscale(100%)';
+            imageElement.style.filter = blurLevels[blurIndex] + ' grayscale(100%)';
+
+            rotateImage(); // Rotaciona a imagem
 
             if (currentAttempts <= 0) {
                 resultElement.textContent = `Você perdeu! A resposta era "${correctAnswer}".`;
                 // Revela a imagem apenas se todas as tentativas forem usadas
                 imageElement.style.filter = 'blur(0) grayscale(0)';
-                document.displaySuggestions('suggestions').disabled = true;
+                imageElement.style.transform = 'rotate(0deg)'; // Exibe a imagem na posição correta
             } else {
                 resultElement.textContent = 'Resposta errada. Tente novamente!';
             }
         }
     }
 
-
     // Limpa o campo de input após cada palpite
     document.getElementById('guess-input').value = '';
 }
-
 
 function filterCharacters(input) {
     return Object.values(characters).filter(character => 
@@ -157,6 +163,7 @@ document.getElementById('guess-input').addEventListener('input', function() {
     }
     const suggestions = filterCharacters(input); // Filtra os personagens
     displaySuggestions(suggestions); // Exibe as sugestões
+    
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -166,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (imageElement) {
         imageElement.src = imageSrc;
         imageElement.style.filter = 'blur(35px) grayscale(100%)';
+        imageElement.style.transform = `rotate(${initialRotation}deg)`; // Aplica a rotação inicial
     } else {
         console.error('Elemento com ID "character-image" não encontrado.');
     }
