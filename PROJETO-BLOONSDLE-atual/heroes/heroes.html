@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
 </head>
 <body>
     <div class="container">
@@ -20,7 +22,7 @@
             </div>
             <form id="quiz-form">
                 <label for="guess-input">Seu palpite:
-                    <input type="text" id="guess-input" placeholder="Digite seu palpite">
+                    <input type="text" id="guess-input" placeholder="Digite seu palpite" autocomplete="off">
                     <div id="suggestions"></div>
                 </label>
                 <button type="button" onclick="submitGuess()">Enviar</button>

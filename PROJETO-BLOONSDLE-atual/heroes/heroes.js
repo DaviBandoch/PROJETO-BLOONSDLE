@@ -51,6 +51,15 @@ function rotateImage() {
     imageElement.style.transform = `rotate(${rotationDegree}deg)`; // Aplica a rotação
 }
 
+function celebrateVictory() {
+    // Dispara confetes
+    confetti({
+        particleCount: 100,
+        spread: 160,
+        origin: { y: 0.6 }
+    });
+}
+
 function submitGuess() {
     const input = document.getElementById('guess-input').value.trim();
     const resultElement = document.getElementById('result');
@@ -81,8 +90,9 @@ function submitGuess() {
 
     // Verifica o palpite do usuário
     if (input.toLowerCase() === correctAnswer.toLowerCase()) {
-        // Acerto - exibe mensagem e revela a imagem
+        // Acerto - exibe mensagem, revela a imagem e dispara os confetes
         resultElement.textContent = 'Parabéns! Você acertou!';
+        celebrateVictory();  // Dispara confetes
         suggestionsContainer.innerHTML = ''; // Limpa as sugestões
         document.getElementById('guess-input').value = ''; // Limpa o input
         imageElement.style.filter = 'blur(0) grayscale(0)';
@@ -163,7 +173,6 @@ document.getElementById('guess-input').addEventListener('input', function() {
     }
     const suggestions = filterCharacters(input); // Filtra os personagens
     displaySuggestions(suggestions); // Exibe as sugestões
-    
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -177,4 +186,14 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         console.error('Elemento com ID "character-image" não encontrado.');
     }
+
+    // A função submitGuess já está definida no seu código  // By Leozin capota random
+
+document.getElementById('guess-input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {  // Verifica se a tecla pressionada é o Enter
+        event.preventDefault();   // Evita o comportamento padrão de envio de formulário (caso tenha algum)
+        submitGuess();            // Chama a função de envio
+    }
+});
+
 });

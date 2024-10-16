@@ -12,9 +12,11 @@ async function loadData() {
     }
 }
 
-// Função para filtrar os dados com base na pesquisa
-function filterData(data, query) {
-    return data.filter(item => item.name.toLowerCase().startsWith(query.toLowerCase()));
+// Função para obter um ID de macaco aleatório baseado na data
+function getRandomMonkeyId() {
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    return (dayOfYear % 40) + 1; // Garante um ID de 1 a 40
 }
 
 // Função para exibir os resultados
@@ -23,8 +25,8 @@ function displayResults(results) {
     resultsContainer.innerHTML = '';
 
     // Se a barra de pesquisa estiver vazia, não exiba nada
-    if (results.length === 0 && searchInput.value.trim() !== '') {
-        resultsContainer.innerHTML = 'Nenhum resultado encontrado.';
+    if (results.length === 0 && document.getElementById('search').value.trim() !== '') {
+        resultsContainer.innerHTML = '<p>Nenhum resultado encontrado.</p>';
         return;
     }
 
@@ -35,12 +37,8 @@ function displayResults(results) {
         const img = document.createElement('img');
         img.src = item.image;
         img.alt = item.name;
-        img.style.width = '100px';
-        img.style.height = 'auto';
-
-        img.onerror = () => {
-            img.src = '/classic/images/errodocaralho.png'; // Imagem padrão
-        };
+        img.style.width = 'auto'; // Ajuste o tamanho da imagem
+        img.style.height = '50px';
 
         const name = document.createElement('p');
         name.textContent = item.name;
@@ -51,22 +49,24 @@ function displayResults(results) {
     });
 }
 
+// Função para filtrar os dados com base na pesquisa
+function filterData(data, query) {
+    return data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+}
+
 // Inicializa a busca
 async function init() {
     const data = await loadData();
-    const searchInput = document.getElementById('search');
+    const randomMonkeyId = getRandomMonkeyId(); // Obtém um ID de macaco aleatório
+    const selectedMonkey = data[randomMonkeyId - 1]; // Seleciona o macaco correspondente
 
+    // Inicializa a barra de pesquisa
+    const searchInput = document.getElementById('search');
     searchInput.addEventListener('input', () => {
         const query = searchInput.value;
         const filteredData = filterData(data, query);
         displayResults(filteredData);
-
-        // Se a barra de pesquisa estiver vazia, esvazie o contêiner de resultados
-        if (query.trim() === '') {
-            displayResults([]); // Isso fará com que o contêiner fique vazio
-        }
     });
 }
 
-// Chama a função de inicialização
 init();

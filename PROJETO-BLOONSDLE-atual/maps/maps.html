@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloonsdle - Maps</title>
+    <title>Bloonsdle - Heroes</title>
     <link rel="stylesheet" href="maps.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <div class="container">
         <button class="home-button" onclick="window.location.href='../home/home.html'">Voltar para a Home</button>
-        <h1>Quiz de Personagens - Bloons TD6</h1>
+        <h1>Bloonsdle - Guess the Hero</h1>
         <div id="game-container">
             <div class="image-container">
                 <img id="character-image" src="" alt="Imagem do Dia">
             </div>
             <form id="quiz-form">
                 <label for="guess-input">Seu palpite:
-                    <input type="text" id="guess-input" placeholder="Digite seu palpite">
+                    <input type="text" id="guess-input" placeholder="Digite seu palpite..." autocomplete="off">
+                    
+                    <div id="suggestions"></div>
                 </label>
-                <div id="suggestions"></div>
                 <button type="button" onclick="submitGuess()">Enviar</button>
             </form>
             <p id="result"></p>
