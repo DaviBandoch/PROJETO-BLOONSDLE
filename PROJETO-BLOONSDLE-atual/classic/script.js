@@ -138,5 +138,39 @@ class Suggestions {
     }
 }
 
+document.getElementById('submitButton').addEventListener('click', () => {
+    const selectedMonkeyName = document.getElementById('search').value.trim();
+
+    // Verifica se o usuário digitou algo
+    if (!selectedMonkeyName) {
+        alert('Por favor, digite o nome de um macaco!');
+        return;
+    }
+
+    // Filtra os dados para encontrar o macaco selecionado
+    const selectedMonkey = this.filterData(selectedMonkeyName)[0]; // Supondo que `this.filterData` retorne uma lista de resultados filtrados
+    
+    if (!selectedMonkey) {
+        alert('Macaco não encontrado!');
+        return;
+    }
+
+    // Comparar os atributos
+    this.compareAttributes(selectedMonkey);
+
+    // Exibe o feedback ao usuário
+    const feedback = document.getElementById('feedback');
+    const correct = selectedMonkey.id === this.correctMonkey.id; // Verifica se o macaco selecionado é o correto
+    if (correct) {
+        feedback.innerHTML = "<p style='color: green;'>Parabéns! Você acertou o macaco correto!</p>";
+    } else {
+        feedback.innerHTML = "<p style='color: red;'>Tente novamente! O macaco correto é diferente.</p>";
+    }
+});
+
+
+
+
+
 // Inicializa a classe com o caminho do JSON
 new Suggestions('monkeys.json');

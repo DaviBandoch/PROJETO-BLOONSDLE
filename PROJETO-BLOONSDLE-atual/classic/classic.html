@@ -12,8 +12,14 @@
         <h1>Bloonsdle</h1>
     </header>
     <main>
-        <label for="search">Digite o nome do macaco:</label>
-        <input type="text" id="search" placeholder="Pesquise...">
+        <form id="searchForm">
+            <label for="search">Pesquise um macaco:</label>
+            <input type="text" id="search" placeholder="Digite o nome do macaco...">
+            <button type="button" id="submitButton">Enviar Tentativa</button> <!-- Botão de envio -->
+        </form>
+        
+        <div id="feedback"></div> <!-- Área para mostrar o feedback -->
+        
         <div id="result"></div>
         <div id="resultComparison"></div> <!-- Contêiner para exibir a comparação -->
     </main>
