@@ -2,6 +2,7 @@ class Suggestions {
     constructor(dataUrl) {
         this.dataUrl = dataUrl;
         this.data = [];
+        this.correctMonkey = null;  // Guardar o macaco correto
         this.init();
     }
 
@@ -24,44 +25,77 @@ class Suggestions {
         return (dayOfYear % 40) + 1; // Garante um ID de 1 a 40
     }
 
+    // Função para comparar os atributos
+    compareAttributes(selectedMonkey) {
+        const attributes = ['alcance', 'damage_type', 'class', 'release_year'];
+        const resultContainer = document.getElementById('resultComparison');
+        resultContainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+        attributes.forEach(attr => {
+            const resultDiv = document.createElement('div');
+            resultDiv.style.display = 'flex';
+            resultDiv.style.justifyContent = 'space-between';
+            resultDiv.style.marginBottom = '10px';
+
+            const attributeLabel = document.createElement('span');
+            attributeLabel.textContent = `${attr.charAt(0).toUpperCase() + attr.slice(1)}:`;
+
+            const userValue = selectedMonkey[attr];
+            const correctValue = this.correctMonkey[attr];
+
+            const valueSpan = document.createElement('span');
+            if (userValue === correctValue) {
+                valueSpan.textContent = `${userValue}`;
+                valueSpan.style.color = 'green'; // Atributos iguais em verde
+            } else {
+                valueSpan.textContent = `${userValue}`;
+                valueSpan.style.color = 'red'; // Atributos diferentes em vermelho
+            }
+
+            resultDiv.appendChild(attributeLabel);
+            resultDiv.appendChild(valueSpan);
+            resultContainer.appendChild(resultDiv);
+        });
+    }
+
     displayResults(results) {
         const resultsContainer = document.getElementById('result');
         resultsContainer.innerHTML = '';
         resultsContainer.style.display = 'grid'; // Usando grid para layout
         resultsContainer.style.gridTemplateColumns = 'repeat(auto-fill, minmax(150px, 1fr))'; // Define a grade com colunas flexíveis
         resultsContainer.style.gap = '10px'; // Espaçamento entre os itens
-    
+
         if (results.length === 0 && document.getElementById('search').value.trim() !== '') {
             resultsContainer.innerHTML = '<p>Nenhum resultado encontrado.</p>';
             return;
         }
-    
+
         results.forEach(item => {
             const resultItem = document.createElement('div');
             resultItem.className = 'result-item';
             resultItem.style.textAlign = 'center'; // Centraliza o texto
-    
+
             const img = document.createElement('img');
             img.src = item.image;
             img.alt = item.name;
             img.style.width = '100px'; // Tamanho da imagem
             img.style.height = 'auto';
-    
+
             const name = document.createElement('p');
             name.textContent = item.name;
-    
+
             const classInfo = document.createElement('p');
             classInfo.textContent = `Classe: ${item.class}`;
-    
+
             const year = document.createElement('p');
             year.textContent = `Ano de Lançamento: ${item.release_year}`;
-    
+
             const alcance = document.createElement('p');
             alcance.textContent = `Alcance: ${item.alcance}`;
-    
+
             const damageType = document.createElement('p');
             damageType.textContent = `Tipo de Dano: ${item.damage_type}`;
-    
+
             resultItem.appendChild(img);
             resultItem.appendChild(name);
             resultItem.appendChild(classInfo);
@@ -69,18 +103,30 @@ class Suggestions {
             resultItem.appendChild(alcance);
             resultItem.appendChild(damageType);
             resultsContainer.appendChild(resultItem);
+
+            // Adicionando o evento de clique
+            resultItem.addEventListener('click', () => this.selectMonkey(item));
         });
     }
-    
 
     filterData(query) {
         return this.data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
     }
 
+    // Função que preenche o campo de pesquisa com o nome do macaco selecionado
+    selectMonkey(item) {
+        const searchInput = document.getElementById('search');
+        searchInput.value = item.name; // Preenche o input com o nome do macaco
+        this.displayResults([]); // Limpa os resultados de pesquisa
+
+        // Comparar os atributos do macaco selecionado com o "macaco correto"
+        this.compareAttributes(item);
+    }
+
     init() {
         this.loadData().then(() => {
             const randomMonkeyId = this.getRandomMonkeyId();
-            const selectedMonkey = this.data[randomMonkeyId - 1];
+            this.correctMonkey = this.data[randomMonkeyId - 1]; // Guarda o macaco correto
 
             const searchInput = document.getElementById('search');
             searchInput.addEventListener('input', () => {

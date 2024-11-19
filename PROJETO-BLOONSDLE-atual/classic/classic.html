@@ -7,14 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button class="home-button" onclick="window.location.href='../home/home.html'">Voltar para a Home</button>
     <header>
         <h1>Bloonsdle</h1>
     </header>
     <main>
         <label for="search">Digite o nome do macaco:</label>
         <input type="text" id="search" placeholder="Pesquise...">
-        <div id="result" ></div>
+        <div id="result"></div>
+        <div id="resultComparison"></div> <!-- Contêiner para exibir a comparação -->
     </main>
+    <!-- Modal para mostrar detalhes do macaco -->
+    <div id="monkey-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2 id="monkey-name"></h2>
+            <img id="monkey-image" src="" alt="Monkey Image" style="width: 200px; height: auto;">
+            <p id="monkey-class"></p>
+            <p id="monkey-release-year"></p>
+            <p id="monkey-alcance"></p>
+            <p id="monkey-damage-type"></p>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
